@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareNest | Smart Healthcare Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'DM Sans',sans-serif;background:#f5f8f7;color:#17332f}h1,h2,h3,.brand{font-family:'Manrope',sans-serif}
+    .panel{background:white;border:1px solid #e3ece9;border-radius:22px;box-shadow:0 8px 30px rgba(25,70,61,.045)}
+    .nav-btn{border-radius:12px;padding:10px 13px;font-weight:600;color:#54716b}.nav-btn.active,.nav-btn:hover{background:#e3f5ee;color:#087f63}
+    .primary{background:#087f63;color:white}.primary:hover{background:#066c54}.field{width:100%;border:1px solid #dce8e4;border-radius:12px;padding:11px 12px;outline:none;background:#fff}.field:focus{border-color:#38a88b;box-shadow:0 0 0 3px #dff6ee}
+    .chat-bubble{max-width:88%;border-radius:17px;padding:12px 14px;line-height:1.55;white-space:pre-wrap}.assistant{background:#edf7f3;border-top-left-radius:5px}.user{background:#087f63;color:white;border-top-right-radius:5px;margin-left:auto}
+  </style>
+</head>
+<body>
+  <header class="bg-white border-b border-emerald-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl primary flex items-center justify-center text-white"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-8-4.6-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.4-8 11-8 11Z"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <div><div class="brand font-extrabold text-xl tracking-tight">CareNest</div><div class="text-xs text-slate-500">Smart Healthcare Assistant</div></div>
+      </a>
+      <div class="hidden md:flex gap-2"><button class="nav-btn active" data-tab="overview">Overview</button><button class="nav-btn" data-tab="chat">AI Assistant</button><button class="nav-btn" data-tab="appointments">Appointments</button><button class="nav-btn" data-tab="reminders">Medication reminders</button></div>
+      <span class="text-xs sm:text-sm bg-emerald-50 text-emerald-800 px-3 py-2 rounded-full font-semibold">Demo workspace</span>
+    </div>
+  </header>
+  <main id="top" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <section id="overview" class="tab-panel">
+      <div class="rounded-3xl p-7 sm:p-10 text-white mb-7" style="background:linear-gradient(120deg,#075e4b,#109777)">
+        <div class="max-w-3xl"><p class="text-emerald-100 uppercase tracking-widest text-xs font-bold mb-3">Your everyday health companion</p><h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">Care for your health, <span class="text-emerald-200">one step at a time.</span></h1><p class="text-emerald-50 mt-4 max-w-2xl leading-7">Ask general health questions, organize doctor visits, and keep your medication schedule in one simple place.</p><button class="mt-6 bg-white text-emerald-900 rounded-xl px-5 py-3 font-bold hover:bg-emerald-50" onclick="showTab('chat')">Chat with the assistant →</button></div>
+      </div>
+      <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        <button onclick="showTab('chat')" class="panel p-6 text-left hover:-translate-y-1 transition"><div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-2xl">✦</div><h2 class="font-bold text-lg mt-4">AI Health Assistant</h2><p class="text-slate-500 text-sm mt-2 leading-6">Get general health information explained in plain language.</p><span class="inline-block mt-4 text-emerald-700 text-sm font-bold">Ask a question →</span></button>
+        <button onclick="showTab('appointments')" class="panel p-6 text-left hover:-translate-y-1 transition"><div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center text-2xl">▦</div><h2 class="font-bold text-lg mt-4">Appointment Manager</h2><p class="text-slate-500 text-sm mt-2 leading-6">Save doctor or clinic appointment requests and review them here.</p><span class="inline-block mt-4 text-emerald-700 text-sm font-bold">Manage appointments →</span></button>
+        <button onclick="showTab('reminders')" class="panel p-6 text-left hover:-translate-y-1 transition"><div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-2xl">◷</div><h2 class="font-bold text-lg mt-4">Medication Reminders</h2><p class="text-slate-500 text-sm mt-2 leading-6">Record medication names and schedules based on your prescription.</p><span class="inline-block mt-4 text-emerald-700 text-sm font-bold">Manage reminders →</span></button>
+      </div>
+      <div class="panel mt-6 p-5 flex gap-3 items-start"><div class="text-amber-600 text-xl">ⓘ</div><div><h3 class="font-bold">Healthcare safety notice</h3><p class="text-sm text-slate-600 mt-1 leading-6">CareNest provides general information and organization tools, not diagnosis or treatment. For an emergency, contact your local emergency services immediately. This demo does not contact clinics or send timed medication notifications.</p></div></div>
+    </section>
+
+    <section id="chat" class="tab-panel hidden">
+      <div class="mb-6"><p class="text-emerald-700 text-xs uppercase tracking-widest font-bold">AI assistant</p><h1 class="text-3xl font-extrabold mt-2">How can I help today?</h1><p class="text-slate-500 mt-2">Ask a general health question or get help using the organizer.</p></div>
+      <div class="panel max-w-4xl overflow-hidden"><div class="p-5 border-b border-slate-100 flex items-center gap-3"><div class="w-10 h-10 primary rounded-full flex items-center justify-center text-white">✦</div><div><h2 class="font-bold">CareNest Assistant</h2><p class="text-xs text-emerald-700">General information · Not a doctor</p></div><span class="ml-auto w-2.5 h-2.5 rounded-full bg-emerald-500"></span></div>
+        <div id="chatMessages" class="p-5 sm:p-6 space-y-4 min-h-72 max-h-[460px] overflow-y-auto"><div class="chat-bubble assistant">Hi! I'm your Smart Healthcare Assistant. I can explain general health topics and help you organize appointments or medication reminders. What would you like to ask?</div></div>
+        <div class="px-5 pb-5"><div class="flex flex-wrap gap-2 mb-3"><button class="suggestion text-xs rounded-full border border-emerald-100 px-3 py-2 hover:bg-emerald-50" data-prompt="What is blood pressure?">What is blood pressure?</button><button class="suggestion text-xs rounded-full border border-emerald-100 px-3 py-2 hover:bg-emerald-50" data-prompt="Help me organize a doctor appointment.">Organize an appointment</button><button class="suggestion text-xs rounded-full border border-emerald-100 px-3 py-2 hover:bg-emerald-50" data-prompt="How can I manage medication reminders safely?">Medication reminders</button></div>
+          <form id="chatForm" class="flex gap-2"><input id="chatInput" class="field flex-1" placeholder="Type your question..." maxlength="4000" required/><button class="primary rounded-xl px-5 font-bold" id="sendBtn">Send</button></form><p class="text-xs text-slate-400 mt-3">Select “Listen” under an assistant reply to send that text to Murf for speech generation. Avoid sharing identifying or highly sensitive medical information.</p></div>
+      </div>
+    </section>
+
+    <section id="appointments" class="tab-panel hidden"><div class="mb-6"><p class="text-emerald-700 text-xs uppercase tracking-widest font-bold">Plan your care</p><h1 class="text-3xl font-extrabold mt-2">Appointment manager</h1><p class="text-slate-500 mt-2">Save appointment requests for your own reference.</p></div>
+      <div class="grid lg:grid-cols-5 gap-6"><form id="appointmentForm" class="panel p-6 lg:col-span-2 space-y-4"><h2 class="text-lg font-bold">Add appointment request</h2><label class="block text-sm font-semibold">Doctor or clinic<input class="field mt-2" id="doctor" placeholder="e.g. Family clinic" required maxlength="120"/></label><div class="grid grid-cols-2 gap-3"><label class="block text-sm font-semibold">Date<input type="date" class="field mt-2" id="apptDate" required/></label><label class="block text-sm font-semibold">Time<input type="time" class="field mt-2" id="apptTime" required/></label></div><label class="block text-sm font-semibold">Notes (optional)<textarea class="field mt-2" id="apptNotes" rows="3" placeholder="Questions to ask your doctor" maxlength="500"></textarea></label><button class="primary rounded-xl w-full py-3 font-bold">Save request</button><p id="apptMessage" class="text-sm" role="status"></p><p class="text-xs text-slate-400">This does not book an appointment with a real clinic.</p></form><div class="panel p-6 lg:col-span-3"><div class="flex justify-between items-center gap-3"><h2 class="text-lg font-bold">Saved requests</h2><button id="refreshAppointments" class="text-sm text-emerald-700 font-bold">Refresh</button></div><div id="appointmentsList" class="mt-4 space-y-3"><p class="text-slate-400 text-sm">Loading...</p></div></div></div>
+    </section>
+
+    <section id="reminders" class="tab-panel hidden"><div class="mb-6"><p class="text-emerald-700 text-xs uppercase tracking-widest font-bold">Stay organized</p><h1 class="text-3xl font-extrabold mt-2">Medication reminders</h1><p class="text-slate-500 mt-2">Record the schedule given by your doctor or pharmacist.</p></div>
+      <div class="grid lg:grid-cols-5 gap-6"><form id="reminderForm" class="panel p-6 lg:col-span-2 space-y-4"><h2 class="text-lg font-bold">Add reminder details</h2><label class="block text-sm font-semibold">Medication name<input id="medName" class="field mt-2" placeholder="Name as shown on prescription" required maxlength="120"/></label><label class="block text-sm font-semibold">Schedule<input id="medSchedule" class="field mt-2" placeholder="e.g. 8:00 PM, as prescribed" required maxlength="160"/></label><button class="primary rounded-xl w-full py-3 font-bold">Save reminder details</button><p id="reminderMessage" class="text-sm" role="status"></p><p class="text-xs text-slate-400">This demo saves details only; it does not send timed notifications or recommend doses.</p></form><div class="panel p-6 lg:col-span-3"><div class="flex justify-between items-center gap-3"><h2 class="text-lg font-bold">Your reminders</h2><button id="refreshReminders" class="text-sm text-emerald-700 font-bold">Refresh</button></div><div id="remindersList" class="mt-4 space-y-3"><p class="text-slate-400 text-sm">Loading...</p></div></div></div>
+    </section>
+    <footer class="text-center text-xs text-slate-400 py-10">CareNest prototype · General health information only · Keep personal health data secure</footer>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
