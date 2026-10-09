@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CareNest — Smart Healthcare Assistant
 
 This project converts the supplied Travel Guide frontend into a healthcare assistant demo. It includes a Flask API, a chat interface, an appointment request organizer, and a medication schedule organizer.
@@ -57,3 +58,6 @@ Then open http://127.0.0.1:5001. Keep that PowerShell window open while using th
 - Medication reminder details are not timed notifications. Add a trusted scheduler/notification service if needed.
 - Storage is in-memory for this demo and resets when the Flask server restarts. Use a properly secured database and authentication before handling real users or health information.
 - The assistant is not a doctor. Do not use it for diagnosis, prescribing, or emergencies.
+=======
+# SmartHealthcareProject
+>>>>>>> acdd6e89c698e284d2521223fa11d60e0122524b
