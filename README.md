@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CareNest — Smart Healthcare Assistant
 
 This project converts the supplied Travel Guide frontend into a healthcare assistant demo. It includes a Flask API, a chat interface, an appointment request organizer, and a medication schedule organizer.
