@@ -9,7 +9,7 @@ from flask_cors import CORS
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-FRONTEND_DIR = BASE_DIR / 'Frontend'
+FRONTEND_DIR = BASE_DIR / 'public'
 
 
 def load_local_env(env_path: Path = BASE_DIR / '.env') -> None:

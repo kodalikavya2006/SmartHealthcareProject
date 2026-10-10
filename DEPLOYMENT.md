@@ -1,6 +1,12 @@
 # Public deployment
 
-CareNest can be deployed as a Render Blueprint using `render.yaml`.
+## Vercel
+
+The root `app.py` exports the Flask application for Vercel's Python runtime, and `public/` contains the static frontend assets. Import the GitHub repository into Vercel and deploy it with the root directory set to the repository root. Vercel assigns the public URL after the deployment succeeds.
+
+## Render
+
+CareNest can also be deployed as a Render Blueprint using `render.yaml`.
 
 1. Push the project, including `render.yaml` and `requirements.txt`, to the `main` branch of the GitHub repository.
 2. Sign in to [Render](https://render.com/), choose **New** > **Blueprint**, and connect `kodalikavya2006/SmartHealthcareProject`.
